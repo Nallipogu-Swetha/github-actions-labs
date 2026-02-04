@@ -1,0 +1,21 @@
+name: Lab 6 - Environment Variables
+
+on: push
+
+jobs:
+  env-job:
+    runs-on: ubuntu-latest
+
+    env:
+      APP_NAME: MyFirstApp
+      ENVIRONMENT: Dev
+
+    steps:
+      - name: Print App Name
+        run: echo "Application Name is $APP_NAME"
+
+      - name: Print Environment
+        run: echo "Environment is $ENVIRONMENT"
+
+      - name: Print Both Together
+        run: echo "Deploying $APP_NAME to $ENVIRONMENT environment"
