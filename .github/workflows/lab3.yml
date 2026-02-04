@@ -1,0 +1,27 @@
+name: Lab 4 - Multiple Commands and File Creation
+
+on: push
+
+jobs:
+  multi-command-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo Code
+        uses: actions/checkout@v4
+
+      - name: Run multiple commands
+        run: |
+          echo "Hello from GitHub Actions Runner"
+          pwd
+          ls -l
+
+      - name: Create a new file inside runner
+        run: |
+          echo "This file is created during workflow run" > lab4file.txt
+          echo "Created file successfully"
+
+      - name: Display file content
+        run: |
+          cat lab4file.txt
+          ls -l
