@@ -1,0 +1,10 @@
+name: Lab 1 - Hello World
+
+on: push
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello Message
+        run: echo "Hello! GitHub Actions is working"
